@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Managento is a simple project management system by Caractere.
 
-Things you may want to cover:
+This is using Rails framework:
 
-* Ruby version
+* Ruby version 5.2.3
 
 * System dependencies
 
 * Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database creation and initialization with PostgreSQL 10.5
