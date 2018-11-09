@@ -1,0 +1,32 @@
+<h1 class="text-right">Tasks</h1>
+
+<div class="row">
+
+
+  <div class="col-md-4"><h2 class="text-center">To Do</h2>
+    <%= render @to_do %>
+  </div>
+
+  <div class="col-md-4"><h2 class="text-center">Doing</h2>
+    <%= render @doing %>
+  </div>
+
+  <div class="col-md-4"><h2 class="text-center">Done </h2>
+    <%= render @done %>
+  </div>
+
+  
+</div>
+
+
+<br><br><br>
+
+<div style="width: relative;>
+
+  <div class="col-md-4"><h3 class="text-center">Removed tasks</h3>
+    <%= render @removed %>
+  </div>
+
+</div>
+
+

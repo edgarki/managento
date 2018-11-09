@@ -1,0 +1,41 @@
+<div class="panel panel-info">	
+	<div class="panel-heading">
+	<!-- This is the edit task link -->
+  <% if task.state == 'to_do' %>
+    <%= link_to edit_task_path(task) do %>
+        Created in <%= time_tag(task.created_at) %> <% end %>
+  <% elsif task.state == 'removed' %>
+      <%= link_to edit_task_path(task) do %>
+        Created in <%= time_tag(task.created_at) %> | Last change was <%= time_ago_in_words(task.updated_at) %> ago<% end %>
+  <% else %>
+    <%= link_to edit_task_path(task) do %>
+        Last change was <%= time_ago_in_words(task.updated_at) %> ago <% end %>
+	<% end %>
+	<!-- / End of the edit task link -->
+
+	
+	<%#= link_to "<i class='fa fa-trash-o' aria-hidden='true'></i>".html_safe, task_path(task), method: :delete, data: {confirm: "Are you sure?"}, class: "pull-right"%>
+  <% if task.state != 'removed' %>
+    <%= link_to "<i class='fa fa-trash' aria-hidden='true'></i>".html_safe, change_task_path(task, state: "removed"), method: :put, data: {confirm: "Do you want to remove this task?"}, class: "pull-right"%>
+  <% else %>
+    <%= link_to "<i class='fa fa-trash' aria-hidden='true'></i>".html_safe, task_path(task), method: :delete, data: {confirm: "Are you sure? This will erase it forever!"}, class: "pull-right"%>
+  <% end %>
+  </div>
+
+  <div class="panel-body"><%= task.content %></div>
+  <div class="panel-footer text-center">
+    <div class="btn-group btn-group-justified">
+    <% if task.state == 'doing' %>
+      <%= link_to "<i class ='fa fa-chevron-left'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put, class: "btn btn-warning btn-md"  %>
+      <%= link_to "<i class ='fa fa-chevron-right'></i>".html_safe, change_task_path(task, state: "done"), method: :put, class: "btn btn-warning btn-md"  %>
+    <% elsif task.state == 'done' %>
+      <%= link_to "<i class ='fa fa-chevron-left'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, class: "btn btn-success btn-md"  %>
+    <% elsif task.state == 'to_do' %>
+      <%= link_to "<i class ='fa fa-chevron-right'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, class: "btn btn-primary btn-md"  %>
+    <% else %>
+      <%= link_to "<i class ='fa fa-save'></i> <b>Recover</b>".html_safe, change_task_path(task, state: "to_do"), method: :put, class: "btn btn-default btn-sm"  %>
+    <% end %>
+    </div>
+	</div>
+</div>
+

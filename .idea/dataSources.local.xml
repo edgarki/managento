@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails app-copy: production" uuid="3b4ef4e7-ea0f-411f-835d-a61436dbde81">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>edgar</user-name>
+    </data-source>
+    <data-source name="Rails app-copy: test" uuid="82afdf6b-fbd1-4baa-a0bc-2c38af88bdd9">
+      <database-info product="PostgreSQL" version="10.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <introspection-schemas>app_test:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails app-copy: development" uuid="3be19fad-5eea-47ba-94b3-9d5fe7c904bb">
+      <database-info product="PostgreSQL" version="10.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <introspection-schemas>app_development:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>
